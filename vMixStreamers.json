@@ -1,0 +1,86 @@
+{
+    "eventId": "EVENT_2023_09_18_14_07_MON_1695045642330",
+    "eventType": "STREAMERS",
+    "players": [
+    {
+      "tp3": {
+        "tieOdds": "14.7",
+        "isBanker": false,
+        "tablePosition": 3,
+        "lossStake": 70,
+        "winOdds": "0.21",
+        "naturalwinStake": 0,
+        "name": "Ling",
+        "naturalwinOdds": "0",
+        "winStake": 40,
+        "tieStake": 0,
+        "lossOdds": "4.7"
+      },
+      "tp1": {
+        "tieOdds": "11.8",
+        "isBanker": false,
+        "tablePosition": 1,
+        "lossStake": 0,
+        "winOdds": "0.32",
+        "naturalwinStake": 0,
+        "name": "Min",
+        "naturalwinOdds": "0",
+        "winStake": 0,
+        "tieStake": 0,
+        "lossOdds": "3.1"
+      },
+      "tp2": {
+        "tieOdds": "12.5",
+        "isBanker": false,
+        "tablePosition": 2,
+        "lossStake": 300,
+        "winOdds": "0.72",
+        "naturalwinStake": 0,
+        "name": "Hien",
+        "naturalwinOdds": "0",
+        "winStake": 200,
+        "tieStake": 0,
+        "lossOdds": "1.4"
+      },
+      "tp7": {
+        "tieOdds": "11.8",
+        "isBanker": false,
+        "tablePosition": 7,
+        "lossStake": 0,
+        "winOdds": "0.32",
+        "naturalwinStake": 0,
+        "name": "Seung",
+        "naturalwinOdds": "0",
+        "winStake": 0,
+        "tieStake": 0,
+        "lossOdds": "3.1"
+      },
+      "tp8": {
+        "loss3Stake": 50,
+        "tie2Odds": "6.1",
+        "isBanker": true,
+        "naturalwin3Stake": 0,
+        "tablePosition": 8,
+        "win3Stake": 50,
+        "tie2Stake": 0,
+        "name": "Koto",
+        "win3Odds": "3.4",
+        "naturalwin3Odds": "0",
+        "loss3Odds": "0.43"
+      },
+      "tp9": {
+        "tieOdds": "14.7",
+        "isBanker": false,
+        "tablePosition": 9,
+        "lossStake": 0,
+        "winOdds": "0.21",
+        "naturalwinStake": 0,
+        "name": "Miki",
+        "naturalwinOdds": "0",
+        "winStake": 0,
+        "tieStake": 0,
+        "lossOdds": "4.7"
+      }
+    }
+  ]
+}
