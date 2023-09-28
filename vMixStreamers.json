@@ -3,27 +3,27 @@
     "eventType": "STREAMERS",
     "players": [
     {
-      "tp3": {
+      "tablePlayer3": {
         "tieOdds": "14.7",
         "isBanker": false,
         "tablePosition": 3,
         "lossStake": 70,
         "winOdds": "0.21",
         "naturalwinStake": 0,
-        "firstName": "Ling",
+        "lastName": "Poliahai",
         "naturalwinOdds": "0",
         "winStake": 40,
         "tieStake": 0,
         "lossOdds": "4.7"
       },
-      "tp1": {
+      "tablePlayer1": {
         "tieOdds": "11.8",
         "isBanker": false,
         "tablePosition": 1,
         "lossStake": 0,
         "winOdds": "0.32",
         "naturalwinStake": 0,
-        "firstName": "Min",
+        "lastName": "Poliahai2",
         "naturalwinOdds": "0",
         "winStake": 0,
         "tieStake": 0,
