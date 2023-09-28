@@ -3,7 +3,7 @@
     "eventType": "STREAMERS",
     "players": [
     {
-      "tp3": {
+      "tablePlayer3": {
         "tieOdds": "14.7",
         "isBanker": false,
         "tablePosition": 3,
@@ -16,7 +16,7 @@
         "tieStake": 0,
         "lossOdds": "4.7"
       },
-      "tp1": {
+      "tablePlayer1": {
         "tieOdds": "11.8",
         "isBanker": false,
         "tablePosition": 1,
