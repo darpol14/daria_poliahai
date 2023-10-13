@@ -25,5 +25,6 @@
   /*The output would look like:
   1. "Start of the program"
   2. "End of the program"
-  3. "Callback executed"
+  3. "Async operation complete"
+  4. "Callback executed"
   */
