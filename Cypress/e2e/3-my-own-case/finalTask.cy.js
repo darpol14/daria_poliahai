@@ -80,8 +80,10 @@ describe('Test Cases for Sauce Demo site', () => {
 
         // Verify the URL is changed to the expected page after successful login
         cy.url().should('include', '/inventory.html');
+
         // Open the sidebar
         cy.get('.bm-burger-button').click();
+        
         // Verify the logout element is available in the sidebar
         cy.get('#logout_sidebar_link').should('be.visible');
 
