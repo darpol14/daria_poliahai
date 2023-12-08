@@ -1,0 +1,203 @@
+{
+	"info": {
+		"_postman_id": "215a1229-8e71-4057-ae74-340ca0a482af",
+		"name": "Final Task AQA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22735499"
+	},
+	"item": [
+		{
+			"name": "TC1: Verify that the GET request returns  correct user information",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Parse the response as JSON",
+							"const jsonData = JSON.parse(responseBody);",
+							"",
+							"// Assert status code is 200 OK",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Validate 'data' property and its sub-properties",
+							"pm.test(\"Correct user details\", function () {",
+							"    pm.expect(jsonData.args.firstname).to.be.a('string');",
+							"    pm.expect(jsonData.args.lastname).to.be.a('string');",
+							"",
+							"    pm.variables.replaceIn('{{$randomFirstName}} {{$randomLastName}}')",
+							"});",
+							"",
+							"/* const expectedFirstName = \"Lolla\";",
+							"const expectedLastName = \"Bradshaw\";",
+							"",
+							"// Parse the response as JSON",
+							"const jsonData = JSON.parse(responseBody);",
+							"",
+							"// Assert status code is 200 OK",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Assert that the response contains the correct user details",
+							"pm.test(\"Correct user details\", function () {",
+							"    pm.expect(jsonData.args.firstname).to.eql(expectedFirstName);",
+							"    pm.expect(jsonData.args.lastname).to.eql(expectedLastName);",
+							"});*/"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://postman-echo.com/get?firstname={{$randomFirstName}}&lastname={{$randomLastName}}",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "firstname",
+							"value": "{{$randomFirstName}}"
+						},
+						{
+							"key": "lastname",
+							"value": "{{$randomLastName}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC2: Verify that the POST request returns  correct user information",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Parse the response as JSON",
+							"const jsonData = JSON.parse(responseBody);",
+							"",
+							"// Assert status code is 200 OK",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Validate 'data' property and its sub-properties",
+							"pm.test(\"Correct user details\", function () {",
+							"    pm.expect(jsonData.data.firstname).to.be.a('string');",
+							"    pm.expect(jsonData.data.lastname).to.be.a('string');",
+							"",
+							"    pm.variables.replaceIn('{{$randomFirstName}} {{$randomLastName}}')",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstname\": \"{{$randomFirstName}}\",\n    \"lastname\": \"{{$randomLastName}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://postman-echo.com/post",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC3: Verify that API endpoints are secured with basic authentication  and allow authorized access",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Parse the response as JSON",
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"// Assert status code is 200 (OK)",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Assert that the response contains the appropriate message indicating valid authentication",
+							"pm.test(\"Valid authentication message\", function () {",
+							"    pm.expect(jsonData.authenticated).to.eql(true);",
+							"});",
+							"",
+							"// Extract the base64-encoded credentials from the Authorization header",
+							"const authHeader = pm.request.headers.get('Authorization');",
+							"const base64Credentials = authHeader.replace('Basic ', '');",
+							"",
+							"// Decode base64-encoded credentials to get the username and password",
+							"const decodedCredentials = atob(base64Credentials);",
+							"const [username, password] = decodedCredentials.split(':');",
+							"",
+							"// Log the extracted username and password",
+							"console.log('Extracted Username:', username);",
+							"console.log('Extracted Password:', password);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic cG9zdG1hbjpwYXNzd29yZA==",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://postman-echo.com/basic-auth",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"basic-auth"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
